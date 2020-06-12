@@ -28,7 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 # Use haml instead of erb
 gem 'haml-rails'
-
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
