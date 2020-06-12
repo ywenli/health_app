@@ -1,14 +1,26 @@
-require 'test_helper'
+require 'rails_helper'
 
-class StaticPagesControllerTest < ActionDispatch::IntegrationTest
-  test "should get home" do
-    get static_pages_home_url
-    assert_response :success
+RSpec.describe StaticPagesController, type: :controller do
+  
+  describe "GET #home" do
+    it "returns http success" do
+      get :home
+      expect(response).to have_http_status(:success)
+    end
   end
-
-  test "should get help" do
-    get static_pages_help_url
-    assert_response :success
+  
+  describe "GET #about" do
+    it "returns http success" do
+      get :about
+      expect(response).to have_http_status(:success)
+    end
   end
-
+  
+  describe "GET #help" do
+    it "returns http success" do
+      get :help
+      expect(response).to have_http_status(:success)
+    end
+  end
+  
 end
