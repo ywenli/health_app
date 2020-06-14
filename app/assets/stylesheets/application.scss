@@ -15,11 +15,53 @@
   }
 }
 
-.navbar-img:hover {
+.logo-img:hover {
   opacity: 0.6;
 }
 
+/* jumbotron */
+
+.jumbotron-extend {
+  background-image: url(<%= assert_path "sunbeam.jpg" %>);
+  background-size: cover;
+  background-repeat: no-repeat;
+  .container {
+    margin-top: 6rem;
+    h1, p {
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+}
+
+/* discription */
+
+.discription-container {
+  margin: 3rem 0;
+  padding: 3rem 1rem;
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1.8rem;
+  }
+  p {
+    font-size: 1rem;
+  }
+}
+
+.discription-img-container {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.discription-img {
+  width: 10rem;
+}
+
+
 /* footer */
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -29,9 +71,6 @@ footer {
     &:hover {
       color: $gray-darker;
     }
-  }
-  small {
-    float: left;
   }
   ul {
     float: right;
