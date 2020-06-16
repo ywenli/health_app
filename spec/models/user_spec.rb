@@ -72,4 +72,23 @@ RSpec.describe User, type: :model do
       expect(user.reload.email).to eq 'foo@example.com'
     end
   end
+  
+  describe "password and password_confirmation" do
+    it "should be present and non-blank" do
+      user.password = user.password_confirmation = " " * 6
+      expect(user).to be_invalid
+    end
+    context "when 5 characters or less" do
+      it "should be invalid" do
+        user.password = user.password_confirmation = "a" * 5
+        expect(user).to be_invalid
+      end
+    end
+    context "when 6 characters or more" do
+      it "should be valid" do
+        user.password = user.password_confirmation = "a" * 6
+        expect(user).to be_valid
+      end
+    end
+  end
 end
