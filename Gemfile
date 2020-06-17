@@ -30,6 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'haml-rails'
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+gem 'rails-i18n', '~> 5.1' 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
