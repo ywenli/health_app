@@ -17,7 +17,10 @@
   margin-bottom: 0;
   background-color: white;
   ul li a button {
-    padding: 0rem 1.2em;
+    padding: 0rem 1.1em;
+  }
+  li {
+    list-style-type: none;
   }
 }
 
@@ -25,6 +28,23 @@
   float: left;
   &:hover {
     opacity: 0.6;
+  }
+}
+
+.btn-extend {
+  width: auto;
+}
+
+.nav-item-extend {
+  a:not(.btn-extend) {
+    // text-decoration: none;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  a {
+    margin-left: 1rem;
+    float: right;
   }
 }
 
