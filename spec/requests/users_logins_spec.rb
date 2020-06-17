@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "UsersLogins", type: :request do
   let(:user) { create(:user) }
   before do
-    visit login_path
+    get login_path
   end
   
   context "with invalid info" do
@@ -11,6 +11,7 @@ RSpec.describe "UsersLogins", type: :request do
       post login_path, params: { session: { email: "",
                                             password: "" } }
       expect(flash[:danger]).to be_truthy
+      expect(is_logged_in?).to be_falsey
     end
   end
   context "with valid info" do
@@ -18,6 +19,12 @@ RSpec.describe "UsersLogins", type: :request do
      post login_path, params: { session: { email: user.email,
                                            password: user.password } }
       expect(flash[:danger]).to be_falsey
+      expect(is_logged_in?).to be_truthy
+    end
+    it "succeeds in login and logout" do
+      expect(is_logged_in?).to be_truthy
+      delete logout_path
+      expect(is_logged_in?).to be_falsey
     end
   end
 end
