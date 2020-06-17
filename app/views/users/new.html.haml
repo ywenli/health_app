@@ -6,21 +6,21 @@
         = link_to image_tag('logo-img-txt.png', width: 100), root_path, class: "logo-img-txt"
       %h1.signup-title
         ユーザー登録
-      = form_with(model: @user, url: signup_path, local: true) do |form|
+      = form_with(model: @user, url: signup_path, local: true) do |f|
         = render 'shared/error_messages'
         
         .form-group
-          = form.text_field :name, class: 'form-controll', placeholder: "名前"
+          = f.text_field :name, class: 'form-controll', placeholder: "名前"
         
         .form-group
-          = form.email_field :email, class: 'form-controll', placeholder: "メールアドレス"
+          = f.email_field :email, class: 'form-controll', placeholder: "メールアドレス"
         
         .form-group
-          = form.password_field :password, class: 'form-controll', placeholder: "パスワード"
+          = f.password_field :password, class: 'form-controll', placeholder: "パスワード"
           
         
         .form-group
-          = form.password_field :password_confirmation, class: 'form-controll', placeholder: "パスワード（再入力）"
+          = f.password_field :password_confirmation, class: 'form-controll', placeholder: "パスワード（再入力）"
         
         .form-group
-          = form.submit "新規ユーザー登録", class: "btn btn-info btn-lg form-submit"
+          = f.submit "新規ユーザー登録", class: "btn btn-info btn-lg form-submit"
