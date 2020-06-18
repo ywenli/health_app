@@ -7,13 +7,6 @@ RSpec.describe "UsersLogins", type: :request do
     get login_path
   end
   
-  # ログインのメソッド　TODO: spec/support/application_helperに切り出し
-  def post_valid_info(remember_me = 0)
-    post login_path, params: { session: { email: user.email,
-                                          password: user.password,
-                                          remember_me: remember_me } }
-  end
-  
   context "with invalid info" do
     it "has a danger flash" do
       post login_path, params: { session: { email: "",
