@@ -1,4 +1,4 @@
-class Sessionsier < ApplicationController
+class SessionsController < ApplicationController
   def new
   end
   
