@@ -37,7 +37,7 @@
 
 .nav-item-extend {
   a:not(.btn-extend) {
-    // text-decoration: none;
+    text-decoration: none;
     &:hover {
       opacity: 0.6;
     }
@@ -116,12 +116,11 @@ footer {
   @include box_sizing;
 }
 
-// signup
+// signup and login
 
 .signup-container {
   width: 100%;
-  max-width: 330px;
-  margin-top: 10rem;
+  margin-top: 1rem;
   padding-top: 1rem !important;
 }
 
@@ -132,9 +131,17 @@ footer {
 .signup-title {
   text-align: center;
   font-weight: normal;
-  font-size: 1.5rem;
-  margin-top: 0.8rem;
-  margin-bottom: 2rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form-group {
@@ -148,7 +155,6 @@ footer {
 
 .form-submit {
   width: 100%;
-  margin-top: 1rem;
 }
 
 #error_explanation {
