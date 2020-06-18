@@ -11,10 +11,12 @@ module ApplicationHelpers
                                           remember_me: remember_me } }
     follow_redirect!
   end
-   
+  
+  # post: 情報の全部を渡す
   def post_valid_info(remember_me = 0)
     post login_path, params: { session: { email: user.email,
                                           password: user.password,
                                           remember_me: remember_me } }
   end
+  
 end
