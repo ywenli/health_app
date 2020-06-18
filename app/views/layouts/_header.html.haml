@@ -11,6 +11,8 @@
         %li.nav-item.nav-item-extend
           = link_to "プロフィール", current_user, class: "btn btn-secondry btn-md btn-extend"
         %li.nav-item.nav-item-extend
+          = link_to "設定", edit_user_path(current_user), class: "btn btn-secondry btn-md btn-extend"
+        %li.nav-item.nav-item-extend
           = link_to "ログアウト", logout_path, method: :delete, class: "btn btn-danger btn-md btn-extend btn-logout-extend"
       - else
         %li.nav-item.nav-item-extend
