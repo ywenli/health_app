@@ -12,7 +12,7 @@ module SessionsHelper
   
   # 記憶トークンcookieに対応するユーザーを返す
   def current_user
-    if (user_if = session[:user_id])
+    if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id])
       user = User.find_by(id: user_id)
@@ -25,6 +25,12 @@ module SessionsHelper
     
   def logged_in?
     !current_user.nil?
+  end
+  
+  def forget(user)
+    user.forget
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
   end
   
   def log_out
