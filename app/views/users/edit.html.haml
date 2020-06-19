@@ -1,0 +1,5 @@
+- provide(:title, 'ユーザー設定')
+.container.edit-container
+  %h1.form-title.form-title-edit
+    = yield(:title)
+  = render 'form'
