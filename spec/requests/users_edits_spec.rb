@@ -12,24 +12,26 @@ RSpec.describe "UsersEdits", type: :request do
                                             password_confirmation: "bar" } }
   end
   
-  context "with invalid info" do
-    it "does not works and redirect to user page" do
-      expect(is_logged_in?).to be_truthy
-      get edit_user_path(user)
-      expect(request.fullpath).to eq '/users/1/edit'
-      patch_invalid_info
-      expect(flash[:danger]).to be_truthy
-      expect(request.fullpath).to eq '/users/1'
+  describe "GET /users/:id/edit" do
+    context "with invalid info" do
+      it "does not works and redirect to user page" do
+        expect(is_logged_in?).to be_truthy
+        get edit_user_path(user)
+        expect(request.fullpath).to eq '/users/1/edit'
+        patch_invalid_info
+        expect(flash[:danger]).to be_truthy
+        expect(request.fullpath).to eq '/users/1'
+      end
     end
-  end
-  context "with valid info" do
-    it "works and redirect to edit page (same)" do
-      get edit_user_path(user)
-      expect(request.fullpath).to eq '/users/1/edit'
-      patch_invalid_info
-      expect(flash[:success]).to be_truthy
-      follow_redirect!
-      expect(request.fullpath).to eq '/users/1/edit'
+    context "with valid info" do
+      it "works and redirect to edit page (same)" do
+        get edit_user_path(user)
+        expect(request.fullpath).to eq '/users/1/edit'
+        patch_invalid_info
+        expect(flash[:success]).to be_truthy
+        follow_redirect!
+        expect(request.fullpath).to eq '/users/1/edit'
+      end
     end
   end
 end
