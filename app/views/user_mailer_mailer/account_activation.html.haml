@@ -5,4 +5,5 @@
   さんへ
 %p
   fuwaへようこそ！下記の「有効化する」をクリックしてアカウントの有効化をしてください。
-= link_to "有効化する", edit_account_activation_url(@user.activation_token, email: @user.email)
+=  link_to "有効化する", edit_account_activation_url(@user.activation_token, 
+                                                      email: @user.email)
